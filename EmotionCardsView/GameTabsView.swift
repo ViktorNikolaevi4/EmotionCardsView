@@ -2,37 +2,32 @@ import SwiftUI
 
 struct GameTabsView: View {
     @State private var selectedTab = 0
+    @StateObject private var statsStore = EmotionStatsStore()
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            RandomCardGameView()
+            RandomCardGameView(statsStore: statsStore)
                 .tabItem {
                     Label("Игра", systemImage: "gamecontroller.fill")
                 }
                 .tag(0)
 
-            PlaceholderTabView(
-                title: "Угадай эмоцию",
-                subtitle: "Этот режим добавим следующим шагом."
-            )
+            StatisticsView(statsStore: statsStore)
             .tabItem {
-                Label("Угадай", systemImage: "questionmark.circle")
+                Label("Статистика", systemImage: "chart.bar.fill")
             }
             .tag(1)
 
             PlaceholderTabView(
-                title: "Советы родителю",
+                title: "Награды",
                 subtitle: "Этот режим добавим следующим шагом."
             )
             .tabItem {
-                Label("Советы", systemImage: "lightbulb")
+                Label("Награды", systemImage: "rosette")
             }
             .tag(2)
 
-            PlaceholderTabView(
-                title: "Профиль",
-                subtitle: "Раздел в разработке."
-            )
+            ProfileView()
             .tabItem {
                 Label("Профиль", systemImage: "person.crop.circle")
             }
