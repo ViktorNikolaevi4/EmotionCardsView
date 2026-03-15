@@ -1,9 +1,3 @@
-//
-//  EmotionCardsViewApp.swift
-//  EmotionCardsView
-//
-//  Created by Виктор Корольков on 14.03.2026.
-//
 
 import SwiftUI
 
