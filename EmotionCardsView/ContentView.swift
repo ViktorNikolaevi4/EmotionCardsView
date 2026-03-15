@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  EmotionCardsView
-//
-//  Created by Виктор Корольков on 14.03.2026.
-//
 
 import SwiftUI
 
@@ -316,8 +310,4 @@ private struct EmotionCard: Identifiable {
             imageName: "Удовлетворение"
         )
     ]
-}
-
-#Preview {
-    ContentView()
 }
